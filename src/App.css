@@ -1,3 +1,7 @@
+body{
+  font: 'proxima-nova';
+}
+
 .App {
   /* background-color: white; */
   height: 100vh;

@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import disneyNavbar from '../../images/DisneyNavbar.png'
+import downArrow from '../../images/DownArrow.png'
 import { useSearchParams } from "react-router-dom";
 import { Grid } from "@mui/material";
 import './index.css'
+import Results from '../Results';
 
 const SearchResults = () => {
 
     const [searchParams] = useSearchParams();
     const [searchQuery, setSearchQuery] = useState("");
+    const [showResults, setShowResults] = useState(true)
   
     // const loadData = async () => {
     //   const countryRes = await getCountryData();
@@ -22,14 +25,26 @@ const SearchResults = () => {
     }, []); 
   
     return (
-      <div className="pageBackground">
+      <div className="">
         <img src={disneyNavbar} alt="Disney Navbar logo" width={"100%"}/>
-        <Grid container>
-          <Grid xs={2}></Grid>
-          <Grid xs={10}>
-            <div className='searchResultsText'>Search Results</div>
+        <Grid container className='pageBackground'>
+          <Grid container>
+            <Grid xs={2}></Grid>
+            <Grid xs={10}>
+              <div className='searchResultsText'>Search Results</div>
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid xs={10}></Grid>
+            <Grid xs={2}>
+              <span className="downArrow" onClick={()=>setShowResults(!showResults)}>
+                <img src={downArrow} alt="Down Arrow"/>
+              </span>
+              {showResults && <span className="hideSearchText">Hide Search Results</span>}
+            </Grid>
           </Grid>
         </Grid>
+        {showResults && <Results searchQuery={searchQuery} />}
 
         {/* <div className="send">
           Can you please provide your personal details? 
