@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Form from './pages/Form';
+import SearchResults from './pages/SearchResults';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />}/>
-          <Route exact path="/form" element={<Form />} />
+          <Route exact path="/search" element={<SearchResults />} />
         </Routes>
       </Router>
     </div>

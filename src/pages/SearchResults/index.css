@@ -1,0 +1,10 @@
+.pageBackground{
+    background-color: white;
+}
+
+.searchResultsText{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #0a223a;
+}

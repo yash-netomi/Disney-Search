@@ -12,7 +12,7 @@ const HomePage = () => {
     const submitOnEnter = (e) => {
         if(e.keyCode == 13){
             navigate({
-                pathname: "form",
+                pathname: "search",
                 search: createSearchParams({
                     searchQuery: name
                 }).toString()
