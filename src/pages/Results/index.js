@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Grid } from "@mui/material";
-import profileIcon from "../../images/Profile.png"
-import sparkleIcon from "../../images/Sparkle.png"
+import profileIcon from "../../images/Profile.svg"
+import sparkleIcon from "../../images/Sparkle.svg"
+import divider from "../../images/Divider.svg"
 import './index.css'
 import Tags from '../../components/Tags';
+import Button from '../../components/Button';
 
 const Results = (props) => {
   
@@ -59,35 +61,72 @@ const Results = (props) => {
         <Grid container alignItems="center">    
             <Grid item xs={2}></Grid>
             <Grid item xs={8}>
-                {
-                    brands.length>0 && 
-                    <>
-                        <span style={{marginRight:"20px"}}>Brands:</span>
-                        {brands.map((brand)=>{
-                            return(
-                                <Tags value={brand} />
-                            )
-                        })}
-                    </>
-                }
-                {
-                    sources.length>0 && 
-                    <>
-                        <span 
-                            style={{
-                                marginRight:"20px",
-                                marginLeft:brands.length>0 ? "26px" : "0px"
-                            }}
-                        >
-                            Sources:
-                        </span>
-                        {sources.map((source)=>{
-                            return(
-                                <Tags value={source} />
-                            )
-                        })}
-                    </>
-                }
+                <Grid container columnSpacing={1}>
+                    <Grid 
+                        item 
+                        xs={8}
+                        style={{
+                            display:"flex"
+                        }}
+                        alignItems="center"
+                    >
+                    {
+                        brands.length>0 && 
+                        <>
+                            <span style={{marginRight:"20px", fontSize:"20px"}}>Brands:</span>
+                            {brands.map((brand)=>{
+                                return(
+                                    <Tags value={brand} />
+                                )
+                            })}
+                        </>
+                    }
+                    {
+                        sources.length>0 && 
+                        <>
+                            <span 
+                                style={{
+                                    marginRight:"20px",
+                                    marginLeft:brands.length>0 ? "26px" : "0px",
+                                    fontSize:"20px"
+                                }}
+                            >
+                                Sources:
+                            </span>
+                            {sources.map((source)=>{
+                                return(
+                                    <Tags value={source} />
+                                )
+                            })}
+                        </>
+                    }
+                    </Grid>
+                    <Grid 
+                        item 
+                        xs={4} 
+                        style={{
+                            display:"flex"
+                        }}
+                        alignItems="center"
+                    >
+                        <Grid container alignItems="center">
+                            <Grid item xs={5}>
+                                <Button variant="thumbsUp" onClick={()=>{}} style={{marginRight:"8px"}}/>
+                                <Button variant="thumbsDown" onClick={()=>{}} />
+                            </Grid>
+                            <Grid item xs={2} style={{display:"flex"}} justifyContent="center">
+                                <img 
+                                    src={divider} 
+                                    alt="Divider" 
+                                />
+                            </Grid>
+                            <Grid item xs={5} style={{display:"flex"}} justifyContent="flex-end">
+                                <Button variant="text" value="Book now" onClick={()=>{}}/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                
             </Grid>
             <Grid item xs={2}></Grid>
         </Grid>
