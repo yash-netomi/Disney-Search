@@ -58,36 +58,40 @@ const Results = (props) => {
             </Grid> 
             <Grid item xs={2}></Grid>
         </Grid>
+        {
+            brands.length>0 && 
+            <Grid container alignItems="center" style={{marginBottom:"11px"}}>
+                <Grid item xs={2} />
+                <Grid item xs={8}>
+                    <span style={{marginRight:"20px", fontSize:"20px"}}>Brands:</span>
+                    {brands.map((brand)=>{
+                        return(
+                            <Tags value={brand} />
+                        )
+                    })}
+                </Grid>
+            </Grid>
+        }
+        
         <Grid container alignItems="center">    
             <Grid item xs={2}></Grid>
             <Grid item xs={8}>
                 <Grid container columnSpacing={1}>
                     <Grid 
                         item 
-                        xs={8}
+                        xs={6}
                         style={{
                             display:"flex"
                         }}
                         alignItems="center"
                     >
-                    {
-                        brands.length>0 && 
-                        <>
-                            <span style={{marginRight:"20px", fontSize:"20px"}}>Brands:</span>
-                            {brands.map((brand)=>{
-                                return(
-                                    <Tags value={brand} />
-                                )
-                            })}
-                        </>
-                    }
+                    
                     {
                         sources.length>0 && 
                         <>
                             <span 
                                 style={{
                                     marginRight:"20px",
-                                    marginLeft:brands.length>0 ? "26px" : "0px",
                                     fontSize:"20px"
                                 }}
                             >
@@ -103,27 +107,24 @@ const Results = (props) => {
                     </Grid>
                     <Grid 
                         item 
-                        xs={4} 
+                        xs={6} 
                         style={{
                             display:"flex"
                         }}
                         alignItems="center"
+                        justifyContent="flex-end"
                     >
-                        <Grid container alignItems="center">
-                            <Grid item xs={5}>
-                                <Button variant="thumbsUp" onClick={()=>{}} style={{marginRight:"8px"}}/>
-                                <Button variant="thumbsDown" onClick={()=>{}} />
-                            </Grid>
-                            <Grid item xs={2} style={{display:"flex"}} justifyContent="center">
-                                <img 
-                                    src={divider} 
-                                    alt="Divider" 
-                                />
-                            </Grid>
-                            <Grid item xs={5} style={{display:"flex"}} justifyContent="flex-end">
-                                <Button variant="text" value="Book now" onClick={()=>{}}/>
-                            </Grid>
-                        </Grid>
+                        <Button variant="thumbsUp" onClick={()=>{}} style={{marginRight:"8px"}}/>
+                        <Button variant="thumbsDown" onClick={()=>{}} />
+                        <img 
+                            src={divider} 
+                            alt="Divider" 
+                            style={{
+                                marginLeft:"33px",
+                                marginRight:"16px"
+                            }}
+                        />
+                        <Button variant="text" value="Book now" onClick={()=>{}}/>
                     </Grid>
                 </Grid>
                 

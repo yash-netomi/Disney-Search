@@ -5,10 +5,12 @@ import { useSearchParams } from "react-router-dom";
 import { Grid } from "@mui/material";
 import './index.css'
 import Results from '../Results';
+import TextFieldBox from '../../components/TextFieldBox';
 
 const SearchResults = () => {
 
     const [searchParams] = useSearchParams();
+    const [question, setQuestion] = useState("")
     const [searchQuery, setSearchQuery] = useState("");
     const [showResults, setShowResults] = useState(true)
   
@@ -36,18 +38,44 @@ const SearchResults = () => {
           </Grid>
           <Grid container>
             <Grid xs={10}></Grid>
-            <Grid xs={2}>
+            <Grid xs={2} style={{display:"flex", paddingRight:"17px"}} justifyContent="flex-end">
               <span className="downArrow" onClick={()=>setShowResults(!showResults)}>
                 <img src={downArrow} alt="Down Arrow"/>
               </span>
-              {showResults && <span className="hideSearchText">Hide Search Results</span>}
+              {showResults && <span className="hideSearchText">Hide Search widget</span>}
             </Grid>
           </Grid>
         </Grid>
-        <div className="allResultsContainer">
-          {showResults && <Results searchQuery={searchQuery} />}
-          <div className='greyDivider'/>
-        </div>
+        {
+          showResults && 
+          <>
+            <div className="allResultsContainer">
+              <Results searchQuery={searchQuery} />
+            </div>
+            <div className='greyDivider'/>
+            <Grid container>
+              <Grid xs={2} />
+              <Grid xs={8} className="askQuestionContainer">
+                <TextFieldBox 
+                    value={question} 
+                    setValue={setQuestion} 
+                    style={{
+                        borderRadius:"10px",
+                        fontSize:"24px",
+                        minHeight:"72px",
+                        paddingTop:"15px",
+                    }} 
+                    placeholder="Ask a question..."
+                    inputStyle={{
+                        fontSize:"9",
+                        paddingLeft:"15px"
+                    }}
+                />
+              </Grid>
+            </Grid>
+          </>
+        }
+        
       </div>
     );
 }

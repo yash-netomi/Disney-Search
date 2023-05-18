@@ -1,4 +1,5 @@
 import { TextField } from '@mui/material';
+import sparkleIcon from "../../images/Sparkle.svg"
 
 const TextFieldBox = (props) => {
     return(
@@ -8,16 +9,20 @@ const TextFieldBox = (props) => {
             fullWidth
             style={{ 
                 backgroundColor: 'white', 
-                paddingLeft:"15px", 
                 ...props.style
             }}
             value={props.value}
             onChange={e => props.setValue(e.target.value)}
             InputProps={{ 
-                disableUnderline: true
+                disableUnderline: true,
+                endAdornment: <img src={sparkleIcon} />
             }}
             inputProps={{
-                style:{fontSize: 9}
+                style:
+                {
+                    fontSize: props.inputStyle.fontSize,
+                    paddingLeft: props.inputStyle.paddingLeft,
+                }
             }}
             placeholder={props.placeholder || ""}
             onKeyDown={props.onKeyDown || {}}

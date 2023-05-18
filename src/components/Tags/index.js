@@ -5,7 +5,7 @@ const Tags = (props) => {
                 display:"inline-block",
                 backgroundColor:"white",
                 padding:"8px 20px 8px 20px",
-                fontSize:"16px",
+                fontSize:"18px",
                 borderRadius:"8px",
                 marginRight:"16px"
             }}    

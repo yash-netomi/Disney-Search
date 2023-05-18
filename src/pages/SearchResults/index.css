@@ -6,6 +6,8 @@
     font-size: 30px;
     margin-top: 20px;
     color: #0a223a;
+    position: relative;
+    left: -30px;
 }
 
 .downArrow{
@@ -23,15 +25,21 @@
 .hideSearchText{
     font-size: 14px;
     margin-left: 5px;
+    position: relative;
+    bottom: -5px;
 }
 
 .allResultsContainer{
-    max-height: 640px;
-    overflow-y: scroll;
+    max-height: 420px;
+    overflow: auto;
 }
 
 .greyDivider{
     border: 1px solid #CDCDCD;
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.askQuestionContainer{
+    vertical-align: middle;
 }

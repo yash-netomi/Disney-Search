@@ -8,14 +8,19 @@ const Button = (props) => {
     return(
         <span
             style={{
-                display:"inline-block",
+                display:"flex",
+                justifyContent: "center", 
+                alignItems: "center",
                 backgroundColor: isThumbs ? "white" : "#2658A6",
-                padding:props.variant === "thumbsUp" ? "8px 16px" : props.variant === "thumbsDown" ? "8px 16px 6px 16px" : "8px 24px",
-                fontSize:"14px",
+                fontSize:"16px",
                 borderRadius:"24px",
                 color:"white",
                 cursor:"pointer",
                 border:isThumbs ? "1px solid #1E6FF1": "",
+                height: "38px",
+                width: isThumbs ? "54px" : "",
+                paddingLeft: !isThumbs ? "24px" : "",
+                paddingRight: !isThumbs ? "24px" : "",
                 ...props.style
             }}   
             onClick={()=>props.onClick()} 
@@ -24,14 +29,16 @@ const Button = (props) => {
                 <img 
                     src={thumbsUp} 
                     alt="Thumbs up" 
-                    height="15px"  
+                    height="19px"  
+                    width="21px"
                 />
             }
             {props.variant === "thumbsDown" && 
                 <img 
                     src={thumbsDown} 
                     alt="Thumbs Down" 
-                    height="15px"  
+                    height="19px"  
+                    width="21px"
                 />
             }
             {

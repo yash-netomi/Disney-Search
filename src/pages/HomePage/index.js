@@ -44,6 +44,10 @@ const HomePage = () => {
                         }} 
                         placeholder="search disneyworld.com"
                         onKeyDown={(e)=>submitOnEnter(e)}
+                        inputStyle={{
+                            fontSize:9,
+                            paddingLeft:"15px"
+                        }}
                     />
                 </Grid>
                 <Grid item xs={1}>
