@@ -43,3 +43,17 @@
 .askQuestionContainer{
     vertical-align: middle;
 }
+
+.enterIcon{
+    margin-left: 21px;
+    margin-right: 21px;
+    cursor: pointer;
+}
+
+.relevantText{
+    font-size: 20px;
+    position: relative;
+    left: -30px;
+    display: inline-block;
+    margin-top: 15px;
+}

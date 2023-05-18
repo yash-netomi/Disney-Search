@@ -21,3 +21,14 @@
     margin-top: 6px;
     font-size: 14px;
 }
+
+.sparkleContainer{
+    display: inline-block;
+    width: 33px;
+    margin-right: 17px;
+}
+
+.boxAnswerContainer{
+    display: inline-block;
+    font-size: 24px;
+}
