@@ -2,6 +2,11 @@
     background-color: white;
 }
 
+.disneyNavbarContainer{
+    position: absolute;
+    width: 100%;
+}
+
 .searchResultsText{
     font-size: 30px;
     margin-top: 20px;
@@ -31,7 +36,7 @@
 
 .allResultsContainer{
     max-height: 420px;
-    overflow: auto;
+    overflow: overlay;
 }
 
 .greyDivider{

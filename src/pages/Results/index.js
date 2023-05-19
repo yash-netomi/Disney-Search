@@ -40,19 +40,6 @@ const Results = (props) => {
         <Grid container style={{marginBottom:"11px"}}>
             <Grid item xs={2}></Grid>
             <Grid item xs={8} className="answerContainer">
-                {/* <Grid container>
-                    <Grid item xs style={{width:"33px"}}>
-                        <img 
-                            src={sparkleIcon} 
-                            alt="Sparkle Image" 
-                            height="33px" 
-                            width="33px"
-                        />
-                    </Grid>
-                    <Grid item xs={11} style={{marginLeft:"-15px", fontSize:"24px"}}>
-                        WDW Cost of theme park ticket is $109.00 per ticket. We have multiple unique theme parks at Walt Disney World Resort near Orlando, Florida—theres plenty of fun for a multi-day stay. Prices are for a one-day ticket unless otherwise noted before tax, for ages 10+. To view or make changes to tickets you've already purchased, visit My Plans. DCL You can book cruise tickets here. 
-                    </Grid>
-                </Grid> */}
                 <div style={{display:"flex", flexDirection:"row"}}>
                     <div className='sparkleContainer'>
                         <img 

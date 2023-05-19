@@ -3,7 +3,6 @@ body{
 }
 
 .App {
-  /* background-color: white; */
   height: 100vh;
   background-image: url("./images/WaltDisneyHomepage.png");
   background-repeat: no-repeat;

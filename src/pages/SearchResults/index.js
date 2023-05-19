@@ -8,6 +8,8 @@ import Results from '../Results';
 import TextFieldBox from '../../components/TextFieldBox';
 import enterIcon from "../../images/Enter.svg"
 import './index.css'
+import SearchBox from '../SearchBox';
+import { validateQuestion } from '../../helpers/validations';
 
 const SearchResults = () => {
 
@@ -24,6 +26,7 @@ const SearchResults = () => {
     // };
 
     const addQuestion = () => {
+      if(!validateQuestion(question)) return;
       const newQueries = [question, ...queries];
       setQueries(newQueries);
       setQuestion("");
@@ -35,12 +38,16 @@ const SearchResults = () => {
   
     useEffect(() => {
       // loadData();
+      console.log("Yash")
       setQueries([searchParams.get("searchQuery")]);
     }, []); 
   
     return (
       <div className="">
-        <img src={disneyNavbar} alt="Disney Navbar logo" width={"100%"}/>
+        <div className='disneyNavbarContainer'>
+          <SearchBox />
+        </div>
+        <img src={disneyNavbar} alt="Disney Navbar logo" width={"100%"}/> 
         <Grid container className='pageBackground'>
           <Grid container>
             <Grid xs={2}></Grid>
@@ -81,16 +88,18 @@ const SearchResults = () => {
                         minHeight:"72px",
                         paddingTop:"15px",
                         border:"1px solid #2C2C2C",
-                        marginBottom:"26px"
+                        marginBottom:"26px",
+                        backgroundColor:"white"
                     }} 
                     placeholder="Ask a question..."
                     inputStyle={{
                         fontSize:"24px",
-                        paddingLeft:"15px",
+                        paddingLeft:"33px",
                         endAdornment: <img src={enterIcon} height="35px" width="36px" className='enterIcon' onClick={()=>addQuestion()} />
                     }}
                     multiline
-                    maxRows={4}
+                    rows={2}
+                    maxRows={2}
                     onKeyDown={(e)=>submitOnEnter(e)}
                 />
               </Grid>

@@ -25,6 +25,7 @@ const TextFieldBox = (props) => {
             }}
             placeholder={props.placeholder || ""}
             onKeyDown={props.onKeyDown || {}}
+            {...props}
         />
     )
 }
